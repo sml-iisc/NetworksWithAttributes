@@ -1,0 +1,57 @@
+Description of the Arguments to be passed to the programs
+==========================================================
+
+learning_rate : Learning rate to be used by the RBM
+momentum_rate : momentum used to be by the RBM
+prior_rat : Controls the value of off-diagonal elements in prior B matrix which is set to 1/(1 + prior_rat)
+lamda_frac : Lambda hyperparameter used in the simulated annealing step heuristic
+chn_len : Length of the persistent chain used in CD algorithm pertaining to RBM
+num_samp : Number of samples to be used to approximate the Expectation in CD algorithm pertaining to RBM
+num_nodes : Number of nodes to be used for generating Synthetic Network
+num_communities : Number of communities to be used for generating Synthetic Network
+num_features : Number of features to be used for generating Synthetic Network
+lr : Learning rate to be used by Adam optimizer
+exp_num_communities : Number of communities to look for in the real network
+batch_par : Batch size hyperparamter. Dictates the number of latent factors (corresponding to nodes) to be updated in a single E-step
+dataset : Dataset to be used for the experiment. Specify one of cora, citeseer, Sinanet, Philosophers
+logfilepath : Path of the log file
+
+
+Experiments on RB-SBM
+======================
+
+Synthetic Networks
+------------------
+
+python Exp_base_rbsbm_synthetic_network.py learning_rate momentum_rate prio_rat lamda_frac chn_len num_samp batch_par logfilepath
+
+Real World Networks
+-------------------
+
+python Exp_base_rbsbm_real_network.py learning_rate momentum_rate prio_rat lamda_frac chn_len num_samp batch_par logfilepath dataset
+
+Experiments on Continuous RB-SBM
+================================
+
+Synthetic Networks
+------------------
+
+python Exp_cont_rbsbm_synthetic_network.py learning_rate momentum_rate prio_rat lamda_frac chn_len num_samp batch_par logfilepath
+
+Real World Networks
+-------------------
+
+python Exp_cont_rbsbm_real_network.py learning_rate momentum_rate prio_rat lamda_frac chn_len num_samp batch_par logfilepath
+
+Experiments on Mixed Membership RB-SBM
+======================================
+
+Synthetic Networks
+------------------
+
+python Exp_mixed_membership_rbsbm_synthetic_network.py num_nodes num_communities num_features lr learning_rate momentum_rate chn_len num_samp logfilepath
+
+Real World Networks
+-------------------
+
+python Exp_mixed_membership_rbsbm_real_network.py lr learning_rate momentum_rate chn_len num_samp exp_num_communities logfilepath
